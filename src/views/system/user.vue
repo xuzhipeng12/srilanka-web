@@ -184,7 +184,7 @@ export default {
           { min: 6, max: 10, message: '密码不得小于6个字符', trigger: 'blur' }
         ],
         email: [
-          { required: true, message: 'validEmail', trigger: 'blur' },
+          { required: true, message: '请输入邮箱', trigger: 'blur' },
           {
             required: true,
             pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
