@@ -90,9 +90,9 @@
         <el-form-item label="邮箱" prop="email">
           <el-input v-model="temp.email" placeholder="请输入邮箱" />
         </el-form-item>
-        <el-form-item label="用户角色" prop="roles">
+        <el-form-item label="用户角色">
           <!-- <el-input v-model="temp.roles" placeholder="请选择用户角色" /> -->
-          <el-select v-model="temp.roles" multiple placeholder="请选择用户角色">
+          <el-select v-model="temp.roles" multiple placeholder="请选择用户角色" @change="handleIsopenSelect">
             <el-option v-for="item in roles" :key="item.value" :label="item.label" :value="item.value" />
           </el-select>
         </el-form-item>
@@ -200,6 +200,9 @@ export default {
     this.getList()
   },
   methods: {
+    handleIsopenSelect() {
+      this.$forceUpdate()
+    },
     getList() {
       this.listLoading = true
       fetchUserList(this.listQuery).then(response => {
